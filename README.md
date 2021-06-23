@@ -1,5 +1,5 @@
 # NLP_Emotional-Chatbot
-## Contribution policy
+## Arabic Chatbot
 ---
 ## Contents
 * [Description](#Description)

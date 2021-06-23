@@ -54,7 +54,6 @@ class ArabicEmpConvDataset(datasets.GeneratorBasedBuilder):
 
     # load the data
     def _generate_examples(self, filepath):
-        # with open(filepath,'r',encoding='utf-8') as f:
         with open("./Dataset/processed/train_arabic_with_history.csv",'r',encoding='utf-8') as f:
             csv_reader = csv.reader(f)
             for i , row in enumerate(csv_reader):

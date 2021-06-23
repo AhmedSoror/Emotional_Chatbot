@@ -44,17 +44,18 @@ class ArabicEmpConvDataset(datasets.GeneratorBasedBuilder):
         return [
             datasets.SplitGenerator(
                 name=datasets.Split.TRAIN,
-                gen_kwargs={"filepath": './empatheticdialogues_arabic_dataset/train_arabic_history.csv'},
+                gen_kwargs={"filepath": './Dataset/processed/train_arabic_with_history.csv'},
             ),
             datasets.SplitGenerator(
                 name=datasets.Split.TEST,
-                gen_kwargs={"filepath": './empatheticdialogues_arabic_dataset/test_arabic_history.csv'},
+                gen_kwargs={"filepath": './Dataset/processed/test_arabic_history.csv'},
             )
         ]
 
     # load the data
     def _generate_examples(self, filepath):
-        with open("./Dataset/processed/train_arabic_with_history.csv",'r',encoding='utf-8') as f:
+        with open(filepath,'r',encoding='utf-8') as f:
+        # with open("./Dataset/processed/train_arabic_with_history.csv",'r',encoding='utf-8') as f:
             csv_reader = csv.reader(f)
             for i , row in enumerate(csv_reader):
                 if i==0:
